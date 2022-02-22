@@ -22,7 +22,7 @@ then
 
     number_of_windows=$(( number_of_windows - num_to_exclude ))
 
-    padding=12
+    padding=20
 
     [ $number_of_windows -le 1 ] && padding=0
 
