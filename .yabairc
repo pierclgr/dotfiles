@@ -30,11 +30,11 @@ yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
 # Set applications to float, most of them are system application, preferences or tools
-yabai -m rule --add app="^Preferenze di Sistema$" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Utility Disco$" manage=off
-yabai -m rule --add app="^Informazioni di Sistema$" manage=off
-yabai -m rule --add app="^Monitoraggio Attività$" manage=off
+yabai -m rule --add app="^Disk Utility$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^TeamViewer$" manage=off
 yabai -m rule --add app="^Skype$" manage=off
 yabai -m rule --add app="^Preferenze.*$" manage=off
@@ -43,11 +43,11 @@ yabai -m rule --add app="^Magnet$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Console$" manage=off
-yabai -m rule --add app="^Utility Compressione$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
-yabai -m rule --add app="^Colorimetro Digitale$" manage=off
+yabai -m rule --add app="^Digital Color Meter$" manage=off
 yabai -m rule --add app="^Launchpad$" manage=off
-yabai -m rule --add app="^Calendario$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
 yabai -m rule --add app="^Paste$" manage=off
 yabai -m rule --add app="^CleanShot X$" manage=off
@@ -60,25 +60,51 @@ yabai -m rule --add title="^.*Widget.*$" manage=off
 # general space settings
 yabai -m config layout bsp
 
-# set space 4 to float
+# set space 4 and 8 to float
 yabai -m config --space 4 layout float
+yabai -m config --space 8 layout float
 
 # set padding and window gap of first display spaces
-yabai -m config top_padding 20
-yabai -m config bottom_padding 20
-yabai -m config left_padding 20
-yabai -m config right_padding 20
-yabai -m config window_gap 20
+yabai -m config --space 1 top_padding 20
+yabai -m config --space 1 bottom_padding 20
+yabai -m config --space 1 left_padding 20
+yabai -m config --space 1 right_padding 20
+yabai -m config --space 1 window_gap 20
+
+yabai -m config --space 2 top_padding 20
+yabai -m config --space 2 bottom_padding 20
+yabai -m config --space 2 left_padding 20
+yabai -m config --space 2 right_padding 20
+yabai -m config --space 2 window_gap 20
+
+yabai -m config --space 3 top_padding 20
+yabai -m config --space 3 bottom_padding 20
+yabai -m config --space 3 left_padding 20
+yabai -m config --space 3 right_padding 20
+yabai -m config --space 3 window_gap 20
 
 # rename space 4 to floating space
 yabai -m space 4 --label floating
+yabai -m space 8 --label floating
 
 # second display paddings
-# yabai -m config --space 5 window_gap 20
-# yabai -m config --space 5 top_padding 40
-# yabai -m config --space 5 bottom_padding 40
-# yabai -m config --space 5 left_padding 40
-# yabai -m config --space 5 right_padding 40
+yabai -m config --space 5 window_gap 40
+yabai -m config --space 5 top_padding 40
+yabai -m config --space 5 bottom_padding 40
+yabai -m config --space 5 left_padding 40
+yabai -m config --space 5 right_padding 40
+
+yabai -m config --space 6 window_gap 40
+yabai -m config --space 6 top_padding 40
+yabai -m config --space 6 bottom_padding 40
+yabai -m config --space 6 left_padding 40
+yabai -m config --space 6 right_padding 40
+
+yabai -m config --space 7 window_gap 40
+yabai -m config --space 7 top_padding 40
+yabai -m config --space 7 bottom_padding 40
+yabai -m config --space 7 left_padding 40
+yabai -m config --space 7 right_padding 40
 
 # mouse support
 yabai -m config mouse_modifier ctrl

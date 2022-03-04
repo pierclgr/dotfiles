@@ -6,6 +6,8 @@ then
     space_info=$(yabai -m query --windows --space | jq)
     number_of_windows=$(yabai -m query --windows --space | jq 'length')
 
+    space_number=$(yabai -m query --windows --window | jq -r '.space')
+
     num_to_exclude=0
 
     for row in $(echo "${space_info}" | jq -r '.[] | @base64'); do
@@ -22,12 +24,20 @@ then
 
     number_of_windows=$(( number_of_windows - num_to_exclude ))
 
-    padding=20
+    if [ $space_number -ge 5 ]
+    then
+        padding=40
+    else
+        padding=20
+    fi
 
     [ $number_of_windows -le 1 ] && padding=0
 
-    yabai -m space --padding abs:$padding:$padding:$padding:$padding
-    yabai -m space --gap abs:$padding
+    yabai -m config --space $space_number top_padding $padding
+    yabai -m config --space $space_number bottom_padding $padding
+    yabai -m config --space $space_number left_padding $padding
+    yabai -m config --space $space_number right_padding $padding
+    yabai -m config --space $space_number window_gap $padding
 else
     # space is float
     # if only 1 window
