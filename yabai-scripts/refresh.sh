@@ -24,20 +24,20 @@ then
 
     number_of_windows=$(( number_of_windows - num_to_exclude ))
 
-    if [ $space_number -ge 5 ]
+    if [ $space_number -le 4 ]
     then
-        padding=40
-    else
         padding=20
+
+        [ $number_of_windows -le 1 ] && padding=0
+
+        yabai -m config --space $space_number top_padding $padding
+        yabai -m config --space $space_number bottom_padding $padding
+        yabai -m config --space $space_number left_padding $padding
+        yabai -m config --space $space_number right_padding $padding
+        yabai -m config --space $space_number window_gap $padding
     fi
 
-    [ $number_of_windows -le 1 ] && padding=0
 
-    yabai -m config --space $space_number top_padding $padding
-    yabai -m config --space $space_number bottom_padding $padding
-    yabai -m config --space $space_number left_padding $padding
-    yabai -m config --space $space_number right_padding $padding
-    yabai -m config --space $space_number window_gap $padding
 else
     # space is float
     # if only 1 window
