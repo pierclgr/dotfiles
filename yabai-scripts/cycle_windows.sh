@@ -1,12 +1,9 @@
 #!/bin/bash
-[[ "$1" == "--reverse" ]] || reverse="| reverse "
-yabai -m query --windows --space  | \
-jq -re '
-  map(select(.minimized != 1))
-  | sort_by(.frame.x, .frame.y, ."stack-index", .id)
-  '"$reverse"'
-  | first as $first
-  | map( $first.id, .id )
-  | .[]' | \
-tail -n +3 | \
-xargs -n2 sh -c 'yabai -m window $1 --swap $2' sh
+win=$(yabai -m query --windows --window last | jq '.id')
+
+while : ; do
+    yabai -m window $win --swap prev &> /dev/null
+    if [[ $? -eq 1 ]]; then
+        break
+    fi
+done
