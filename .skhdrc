@@ -1,18 +1,18 @@
 # move window to specific space and focus
-ctrl + shift - 1 : yabai -m window --space 1 && yabai -m space --focus 1
-ctrl + shift - 2 : yabai -m window --space 2 && yabai -m space --focus 2
-ctrl + shift - 3 : yabai -m window --space 3 && yabai -m space --focus 3
-ctrl + shift - 4 : yabai -m window --space 4 && yabai -m space --focus 4
-ctrl + shift - 5 : yabai -m window --space 5 && yabai -m space --focus 5
-ctrl + shift - 6 : yabai -m window --space 6 && yabai -m space --focus 6
-ctrl + shift - 7 : yabai -m window --space 7 && yabai -m space --focus 7
-ctrl + shift - 8 : yabai -m window --space 8 && yabai -m space --focus 8
-ctrl + shift - 9 : yabai -m window --space 9 && yabai -m space --focus 9
-ctrl + shift - 0 : yabai -m window --space 10 && yabai -m space --focus 10
+ctrl + shift - 1 : yabai -m window --space 1 && sh /Users/pierclgr/space_switch.sh 1 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 2 : yabai -m window --space 2 && sh /Users/pierclgr/space_switch.sh 2 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 3 : yabai -m window --space 3 && sh /Users/pierclgr/space_switch.sh 3 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 4 : yabai -m window --space 4 && sh /Users/pierclgr/space_switch.sh 4 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 5 : yabai -m window --space 5 && sh /Users/pierclgr/space_switch.sh 5 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 6 : yabai -m window --space 6 && sh /Users/pierclgr/space_switch.sh 6 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 7 : yabai -m window --space 7 && sh /Users/pierclgr/space_switch.sh 7 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 8 : yabai -m window --space 8 && sh /Users/pierclgr/space_switch.sh 8 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 9 : yabai -m window --space 9 && sh /Users/pierclgr/space_switch.sh 9 $(yabai -m query --windows --window | jq '.id')
+ctrl + shift - 0 : yabai -m window --space 10 && sh /Users/pierclgr/space_switch.sh 10 $(yabai -m query --windows --window | jq '.id')
 
 # move window to next/previous space and focus
 ctrl + shift - right : (yabai -m window --space next && yabai -m space --focus next) || (yabai -m window --space first && yabai -m space --focus first)
-ctrl + shift - left : (yabai -m window --space prev && yabai -m space --focus prev) || (yabai -m window --space last && yabai -m space --focus last)
+ctrl + shift - left : (yabai -m window --space prev && yabai -m space --focus prev) || (yabai -m win9dow --space last && yabai -m space --focus last)
 
 # move window to specific space
 ctrl + alt - 1 : yabai -m window --space 1
@@ -31,18 +31,18 @@ ctrl + alt - right : yabai -m window --space next || yabai -m window --space fir
 ctrl + alt - left : yabai -m window --space prev || yabai -m window --space last
 
 # focus space 
-ctrl - 1 : yabai -m space --focus 1
-ctrl - 2 : yabai -m space --focus 2
-ctrl - 3 : yabai -m space --focus 3
-ctrl - 4 : yabai -m space --focus 4
-ctrl - 5 : yabai -m space --focus 5
-ctrl - 6 : yabai -m space --focus 6
-ctrl - 7 : yabai -m space --focus 7
-ctrl - 8 : yabai -m space --focus 8
-ctrl - 9 : yabai -m space --focus 9
-ctrl - 0 : yabai -m space --focus 10
-ctrl - right : yabai -m space --focus next || yabai -m space --focus first
-ctrl - left : yabai -m space --focus prev || yabai -m space --focus last
+ctrl - 1 : sh /Users/pierclgr/space_switch.sh 1
+ctrl - 2 : sh /Users/pierclgr/space_switch.sh 2
+ctrl - 3 : sh /Users/pierclgr/space_switch.sh 3
+ctrl - 4 : sh /Users/pierclgr/space_switch.sh 4
+ctrl - 5 : sh /Users/pierclgr/space_switch.sh 5
+ctrl - 6 : sh /Users/pierclgr/space_switch.sh 6
+ctrl - 7 : sh /Users/pierclgr/space_switch.sh 7
+ctrl - 8 : sh /Users/pierclgr/space_switch.sh 8
+ctrl - 9 : sh /Users/pierclgr/space_switch.sh 9
+ctrl - 0 : sh /Users/pierclgr/space_switch.sh 10
+ctrl - right : sh /Users/pierclgr/space_switch.sh next
+ctrl - left : sh /Users/pierclgr/space_switch.sh prev
 
 # move window to new space
 ctrl + alt - n : yabai -m space --create && yabai -m window --space last
@@ -50,8 +50,8 @@ ctrl + alt - n : yabai -m space --create && yabai -m window --space last
 # move window to new space and focus
 ctrl + shift - n : yabai -m space --create && yabai -m window --space last && yabai -m space --focus last
 
-# create empty new space
-ctrl + shift + alt - n : yabai -m space --create
+# create empty new space and focus it
+ctrl + shift + alt - n : yabai -m space --create && sh /Users/pierclgr/space_switch.sh $(yabai -m query --spaces --display | jq '.[-1].index')
 
 # delete current space
 ctrl + shift + alt - d : yabai -m space --destroy

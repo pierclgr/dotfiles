@@ -67,7 +67,7 @@ then
 else
     # space is float
     # if only 1 window
-    if [[ $(yabai -m query --spaces --space | jq '.windows' | jq 'length') == 1 ]]
+    if [[ $(yabai -m query --windows --space $space | jq 'map(select(.app != "Sleeve")) | length') == 1 ]]
     then
         # maximize
         skhd -k "ctrl + alt - return"
