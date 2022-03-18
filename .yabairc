@@ -5,7 +5,7 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config debug_output                 on
-yabai -m config mouse_follows_focus          off
+yabai -m config mouse_follows_focus          offs
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
@@ -22,11 +22,13 @@ yabai -m config active_window_border_color   0xFFDF8732
 yabai -m config normal_window_border_color   0x00FFFFFF
 yabai -m config insert_feedback_color        0xffd75f5f
 
+# mouse support
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 on
-yabai -m config mouse_action1                move
-yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
+yabai -m config mouse_modifier ctrl
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
 
 # Set applications to float, most of them are system application, preferences or tools
 yabai -m rule --add app="^System Preferences$" manage=off
@@ -107,11 +109,6 @@ yabai -m space 8 --label floating_2
 # yabai -m config --space 7 left_padding 40
 # yabai -m config --space 7 right_padding 40
 
-# mouse support
-yabai -m config mouse_modifier ctrl
-yabai -m config mouse_action1 move
-yabai -m config mouse_action2 resize
-
 yabai -m signal --add event=window_created action="~/refresh.sh"
 yabai -m signal --add event=window_destroyed action="~/refresh.sh"
 yabai -m signal --add event=window_minimized action="~/refresh.sh"
@@ -132,4 +129,3 @@ echo "yabai configuration loaded.."
 
 # check at startup
 ~/refresh.sh
-
