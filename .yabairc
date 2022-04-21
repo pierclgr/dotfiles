@@ -63,9 +63,9 @@ yabai -m rule --add title="^.*Widget.*$" manage=off
 # general space settings
 yabai -m config layout bsp
 
-# set space 4 and 8 to float
-yabai -m config --space 4 layout float
-yabai -m config --space 8 layout float
+# set space 5 and 10 to float
+yabai -m config --space 5 layout float
+yabai -m config --space 10 layout float
 
 # set padding and window gap of first display spaces
 # yabai -m config --space 1 top_padding 40
@@ -86,9 +86,9 @@ yabai -m config --space 8 layout float
 # yabai -m config --space 3 right_padding 40
 # yabai -m config --space 3 window_gap 40
 
-# rename space 4 to floating space
-yabai -m space 4 --label floating_1
-yabai -m space 8 --label floating_2
+# rename space 5 and 10 to floating space
+yabai -m space 5 --label floating_1
+yabai -m space 10 --label floating_2
 
 # second display paddings
 # yabai -m config --space 5 window_gap 40
