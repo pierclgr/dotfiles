@@ -12,7 +12,7 @@ ctrl + shift - 0 : yabai -m window --space 10 && yabai -m space --focus 10
 
 # move window to next/previous space and focus
 ctrl + shift - right : (yabai -m window --space next && yabai -m space --focus next) || (yabai -m window --space first && yabai -m space --focus first)
-ctrl + shift - left : (yabai -m window --space prev && yabai -m space --focus prev) || (yabai -m win9dow --space last && yabai -m space --focus last)
+ctrl + shift - left : (yabai -m window --space prev && yabai -m space --focus prev) || (yabai -m window --space last && yabai -m space --focus last)
 
 # move window to specific space
 ctrl + alt - 1 : yabai -m window --space 1
