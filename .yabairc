@@ -31,7 +31,7 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
 # Set applications to float, most of them are system application, preferences or tools
-yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
@@ -40,6 +40,8 @@ yabai -m rule --add app="^TeamViewer$" manage=off
 yabai -m rule --add app="^Skype$" manage=off
 yabai -m rule --add app="^Preferenze.*$" manage=off
 yabai -m rule --add app="^Preferences.*$" manage=off
+yabai -m rule --add app="^Impostazioni.*$" manage=off
+yabai -m rule --add app="^Settings.*$" manage=off
 yabai -m rule --add app="^Magnet$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
@@ -56,6 +58,8 @@ yabai -m rule --add app="^Sleeve$" manage=off
 yabai -m rule --add app="^Forehead$" manage=off
 yabai -m rule --add title="^.*Preferences.*$" manage=off
 yabai -m rule --add title="^.*Preferenze.*$" manage=off
+yabai -m rule --add title="^.*Impostazioni.*$" manage=off
+yabai -m rule --add title="^.*Settings.*$" manage=off
 yabai -m rule --add title="^.*Install.*$" manage=off
 yabai -m rule --add title="^.*Welcome.*$" manage=off
 yabai -m rule --add title="^.*Widget.*$" manage=off
