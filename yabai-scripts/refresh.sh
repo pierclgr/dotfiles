@@ -44,7 +44,7 @@ then
         if [ $current_display == 1 ] 
         then
             # then it is the big one, so set padding to 40
-            padding=35
+            padding=30
         else
             # otherwise it is the laptop one, so set padding to 20
             padding=20

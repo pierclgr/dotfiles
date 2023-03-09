@@ -68,46 +68,58 @@ yabai -m config --space 5 layout float
 yabai -m config --space 10 layout float
 
 # set padding and window gap of first display spaces
-# yabai -m config --space 1 top_padding 40
-# yabai -m config --space 1 bottom_padding 40
-# yabai -m config --space 1 left_padding 40
-# yabai -m config --space 1 right_padding 40
-# yabai -m config --space 1 window_gap 40
+# yabai -m config --space 1 top_padding 35
+# yabai -m config --space 1 bottom_padding 35
+# yabai -m config --space 1 left_padding 35
+# yabai -m config --space 1 right_padding 35
+# yabai -m config --space 1 window_gap 35
 
-# yabai -m config --space 2 top_padding 40
-# yabai -m config --space 2 bottom_padding 40
-# yabai -m config --space 2 left_padding 40
-# yabai -m config --space 2 right_padding 40
-# yabai -m config --space 2 window_gap 40
+# yabai -m config --space 2 top_padding 35
+# yabai -m config --space 2 bottom_padding 35
+# yabai -m config --space 2 left_padding 35
+# yabai -m config --space 2 right_padding 35
+# yabai -m config --space 2 window_gap 35
 
-# yabai -m config --space 3 top_padding 40
-# yabai -m config --space 3 bottom_padding 40
-# yabai -m config --space 3 left_padding 40
-# yabai -m config --space 3 right_padding 40
-# yabai -m config --space 3 window_gap 40
+# yabai -m config --space 3 top_padding 35
+# yabai -m config --space 3 bottom_padding 35
+# yabai -m config --space 3 left_padding 35
+# yabai -m config --space 3 right_padding 35
+# yabai -m config --space 3 window_gap 35
+
+# yabai -m config --space 4 top_padding 35
+# yabai -m config --space 4 bottom_padding 35
+# yabai -m config --space 4 left_padding 35
+# yabai -m config --space 4 right_padding 35
+# yabai -m config --space 4 window_gap 35
 
 # rename space 5 and 10 to floating space
 yabai -m space 5 --label floating_1
 yabai -m space 10 --label floating_2
 
 # second display paddings
-# yabai -m config --space 5 window_gap 40
-# yabai -m config --space 5 top_padding 40
-# yabai -m config --space 5 bottom_padding 40
-# yabai -m config --space 5 left_padding 40
-# yabai -m config --space 5 right_padding 40
+# yabai -m config --space 6 window_gap 20
+# yabai -m config --space 6 top_padding 20
+# yabai -m config --space 6 bottom_padding 20
+# yabai -m config --space 6 left_padding 20
+# yabai -m config --space 6 right_padding 20
 
-# yabai -m config --space 6 window_gap 40
-# yabai -m config --space 6 top_padding 40
-# yabai -m config --space 6 bottom_padding 40
-# yabai -m config --space 6 left_padding 40
-# yabai -m config --space 6 right_padding 40
+# yabai -m config --space 7 window_gap 20
+# yabai -m config --space 7 top_padding 20
+# yabai -m config --space 7 bottom_padding 20
+# yabai -m config --space 7 left_padding 20
+# yabai -m config --space 7 right_padding 20
 
-# yabai -m config --space 7 window_gap 40
-# yabai -m config --space 7 top_padding 40
-# yabai -m config --space 7 bottom_padding 40
-# yabai -m config --space 7 left_padding 40
-# yabai -m config --space 7 right_padding 40
+# yabai -m config --space 8 window_gap 20
+# yabai -m config --space 8 top_padding 20
+# yabai -m config --space 8 bottom_padding 20
+# yabai -m config --space 8 left_padding 20
+# yabai -m config --space 8 right_padding 20
+
+# yabai -m config --space 9 window_gap 20
+# yabai -m config --space 9 top_padding 20
+# yabai -m config --space 9 bottom_padding 20
+# yabai -m config --space 9 left_padding 20
+# yabai -m config --space 9 right_padding 20
 
 yabai -m signal --add event=window_created action="~/refresh.sh"
 yabai -m signal --add event=window_destroyed action="~/refresh.sh"

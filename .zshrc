@@ -30,21 +30,6 @@ PROMPT='%F{red}[%D{%d-%m %H:%M}] %F{cyan}%n%F{red}@%F{yellow}%M %F{green}'$'\U2b
 alias python='python3'
 alias pip='pip3'
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/pierclgr/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/pierclgr/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/pierclgr/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/pierclgr/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 export PATH=/Applications/MiniZincIDE.app/Contents/Resources:$PATH
 export PATH=$PATH:/Users/pierclgr/.nexustools
 
@@ -57,3 +42,19 @@ export PATH="$PATH:/Users/pierclgr/flutter/bin"
 
 export MAVEN_HOME=/Library/apache-maven-3.6.3
 export PATH=$MAVEN_HOME/bin:$PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/pierclgr/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/pierclgr/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/pierclgr/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/pierclgr/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
