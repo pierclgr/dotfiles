@@ -56,6 +56,7 @@ yabai -m rule --add app="^Paste$" manage=off
 yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Sleeve$" manage=off
 yabai -m rule --add app="^Forehead$" manage=off
+yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add title="^.*Preferences.*$" manage=off
 yabai -m rule --add title="^.*Preferenze.*$" manage=off
 yabai -m rule --add title="^.*Impostazioni.*$" manage=off
