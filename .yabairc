@@ -52,6 +52,7 @@ yabai -m rule --add app="^Digital Color Meter$" manage=off
 yabai -m rule --add app="^Launchpad$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
+yabai -m rule --add app="^CleanMyMac X$" manage=off
 yabai -m rule --add app="^Paste$" manage=off
 yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Sleeve$" manage=off
