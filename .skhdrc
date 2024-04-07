@@ -60,7 +60,7 @@ ctrl + shift + alt - d : yabai -m space --destroy
 hyper - r : skhd -r
 
 # restart yabai
-hyper - y : brew services restart yabai
+hyper - y : yabai --restart-service
 
 # focus next application in the space clockwise
 ctrl + shift - t : yabai -m window --focus next || yabai -m window --focus first
