@@ -1,12 +1,12 @@
-sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 # other config stuff
 
 # global settings
 yabai -m config debug_output                 on
-yabai -m config mouse_follows_focus          offs
-yabai -m config focus_follows_mouse          off
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse	     autoraise
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_shadow                on
@@ -14,13 +14,13 @@ yabai -m config window_shadow                on
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
-yabai -m config normal_window_opacity        0.9
+yabai -m config normal_window_opacity        0.8
 
-yabai -m config window_border 		         off
-yabai -m config window_border_width 	     10
-yabai -m config active_window_border_color   0xFFDF8732
-yabai -m config normal_window_border_color   0x00FFFFFF
-yabai -m config insert_feedback_color        0xffd75f5f
+# yabai -m config window_border 		     off
+# yabai -m config window_border_width 	     10
+# yabai -m config active_window_border_color   0xFFDF8732
+# yabai -m config normal_window_border_color   0x00FFFFFF
+# yabai -m config insert_feedback_color        0xffd75f5f
 
 # mouse support
 yabai -m config split_ratio                  0.50
@@ -37,20 +37,20 @@ yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^TeamViewer$" manage=off
-yabai -m rule --add app="^Skype$" manage=off
+# yabai -m rule --add app="^Skype$" manage=off
 yabai -m rule --add app="^Preferenze.*$" manage=off
 yabai -m rule --add app="^Preferences.*$" manage=off
 yabai -m rule --add app="^Impostazioni.*$" manage=off
 yabai -m rule --add app="^Settings.*$" manage=off
 yabai -m rule --add app="^Magnet$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Spotify$" manage=off
+# yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Console$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^Digital Color Meter$" manage=off
 yabai -m rule --add app="^Launchpad$" manage=off
-yabai -m rule --add app="^Calendar$" manage=off
+# yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
 yabai -m rule --add app="^CleanMyMac X$" manage=off
 yabai -m rule --add app="^Paste$" manage=off
@@ -58,8 +58,13 @@ yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Sleeve$" manage=off
 yabai -m rule --add app="^Forehead$" manage=off
 yabai -m rule --add app="^Music$" manage=off
-yabai -m rule --add app="^Microsoft Teams classic$" manage=off
-yabai -m rule --add app="^Microsoft Teams$" manage=off
+yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off sticky=on layer=above
+
+# Disable mouse_follows_focus and focus_follows_mouse when Arc PIP is focused, re-enable otherwise
+yabai -m signal --add event=window_focused app="^Arc$" title="^$" action="yabai -m config mouse_follows_focus off; yabai -m config focus_follows_mouse off"
+yabai -m signal --add event=window_focused app!="^Arc$" action="yabai -m config mouse_follows_focus on; yabai -m config focus_follows_mouse autoraise"
+# yabai -m rule --add app="^Microsoft Teams classic$" manage=off
+# yabai -m rule --add app="^Microsoft Teams$" manage=off
 yabai -m rule --add title="^.*Preferences.*$" manage=off
 yabai -m rule --add title="^.*Preferenze.*$" manage=off
 yabai -m rule --add title="^.*Impostazioni.*$" manage=off
@@ -70,6 +75,11 @@ yabai -m rule --add title="^.*Widget.*$" manage=off
 
 # general space settings
 yabai -m config layout bsp
+# yabai -m config top_padding    30
+# yabai -m config bottom_padding 30
+# yabai -m config left_padding   30
+# yabai -m config right_padding  30
+# yabai -m config window_gap     35
 
 # set space 5 and 10 to float
 yabai -m config --space 5 layout float
@@ -129,23 +139,20 @@ yabai -m space 10 --label floating_2
 # yabai -m config --space 9 left_padding 20
 # yabai -m config --space 9 right_padding 20
 
-yabai -m signal --add event=window_created action="~/refresh.sh"
-yabai -m signal --add event=window_destroyed action="~/refresh.sh"
-yabai -m signal --add event=window_minimized action="~/refresh.sh"
-yabai -m signal --add event=window_deminimized action="~/refresh.sh"
-yabai -m signal --add event=space_changed action="~/refresh.sh"
-yabai -m signal --add event=application_terminated action="~/refresh.sh"
-yabai -m signal --add event=application_launched action="~/refresh.sh"
-# yabai -m signal --add event=application_activated action="~/refresh.sh"
-# yabai -m signal --add event=application_deactivated action="~/refresh.sh"
+yabai -m signal --add event=window_created action="sh ~/.yabai_scripts/refresh.sh"
+yabai -m signal --add event=window_destroyed action="sh ~/.yabai_scripts/refresh.sh"
+yabai -m signal --add event=window_minimized action="sh ~/.yabai_scripts/refresh.sh"
+yabai -m signal --add event=window_deminimized action="sh ~/.yabai_scripts/refresh.sh"
+yabai -m signal --add event=space_changed action="sh ~/.yabai_scripts/refresh.sh"
+yabai -m signal --add event=application_terminated action="sh ~/.yabai_scripts/refresh.sh"
+yabai -m signal --add event=application_launched action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=application_activated action="~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=application_deactivated action="~/.yabai_scripts/refresh.sh"
+
+# start JankyBorders for active window highlight
+borders active_color="gradient(top_left=0xffee8643,bottom_right=0xff804135)" inactive_color=0xff404040 width=12.0 style=round &
 
 echo "yabai configuration loaded.."
 
-# add window focus border
-
-# kill any existing limelight process if one exists, before we launch a new one
-# killall limelight &> /dev/null
-# limelight &> /dev/null &
-
 # check at startup
-~/refresh.sh
+sh ~/.yabai_scripts/refresh.sh

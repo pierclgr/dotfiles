@@ -1,0 +1,5 @@
+alias python='python3'
+alias pip='pip3'
+alias vim='nvim'
+alias claude-ollama='~/.claude_providers/claude-ollama.sh'
+alias claude-openrouter='~/.claude_providers/claude-openrouter.sh'
