@@ -47,29 +47,44 @@ then
             padding=30
         else
             # otherwise it is the laptop one, so set padding to 20
-            padding=20
+            padding=30
         fi 
     else
         # one display connected so it is the laptop one and the padding is 20
-        padding=20
+        padding=30
     fi
+	
+    # total visible windows (managed + floating, excluding minimized/hidden)
+    total_windows=$(yabai -m query --windows --space | jq '[.[] | select(."is-minimized" == false and ."is-visible" == true and .subrole == "AXStandardWindow")] | length')
 
-    # if the current space has no valid windows (managed by yabai and visible), then set the padding to 0
+    # if the current space has no valid managed windows, then set the padding to 0
     [ $number_of_windows -le 1 ] && padding=0
+
+    # show/hide borders based on total window count (including floating)
+    if [ "$total_windows" -le 1 ]; then
+        borders width=0.0
+    else
+        borders active_color="gradient(top_left=0xffee8643,bottom_right=0xff804135)" inactive_color=0xff404040 width=12.0
+    fi
 
     # set padding values for the current space
     yabai -m config --space $space_number top_padding $padding
     yabai -m config --space $space_number bottom_padding $padding
     yabai -m config --space $space_number left_padding $padding
     yabai -m config --space $space_number right_padding $padding
-    yabai -m config --space $space_number window_gap $padding
+    gap=$(( padding > 0 ? padding + 5 : 0 ))
+    yabai -m config --space $space_number window_gap $gap
 
 else
     # space is float
-    # if only 1 window
-    if [[ $(yabai -m query --windows --space $space | jq 'map(select(.app != "Sleeve")) | length') == 1 ]]
-    then
-        # maximize
-        skhd -k "ctrl + alt - return"
+    num_float_windows=$(yabai -m query --windows --space | jq '[.[] | select(."is-minimized" == false and ."is-visible" == true and .subrole == "AXStandardWindow")] | length')
+    if [ "$num_float_windows" -le 1 ]; then
+        borders width=0.0
+        # if only 1 window, maximize
+        if [ "$num_float_windows" -eq 1 ]; then
+            skhd -k "ctrl + alt - return"
+        fi
+    else
+        borders active_color="gradient(top_left=0xffee8643,bottom_right=0xff804135)" inactive_color=0xff404040 width=12.0
     fi
 fi
