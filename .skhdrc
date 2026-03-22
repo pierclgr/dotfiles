@@ -63,13 +63,55 @@ hyper - r : skhd -r
 hyper - y : yabai --restart-service
 
 # focus next application in the space clockwise
-ctrl + shift - t : yabai -m window --focus next || yabai -m window --focus first
+ctrl - tab : yabai -m window --focus next || yabai -m window --focus first
+
+# cycle focus counterclockwise
+ctrl + shift - tab : yabai -m window --focus prev || yabai -m window --focus last
 
 # focus next application in the space clockwise considering also floating ones
-ctrl + alt + shift - t : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
+ctrl + alt - tab : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
+
+# maximize (zoom-fullscreen) toggle
+ctrl + alt - return : skhd -k "fn + ctrl - f"
+
+# toggle native fullscreen
+ctrl - f : yabai -m window --toggle native-fullscreen
+
+# spotlight search
+ctrl - space : skhd -k "cmd - space"
+
+# close window
+ctrl - w : skhd -k "cmd - w"
+
+# quit application
+ctrl - q : skhd -k "cmd - q"
+
+# shutdown/reboot menu
+ctrl - e : osascript -e 'tell application "loginwindow" to «event aevtrsdn»'
+
+# lock screen
+ctrl - l : pmset displaysleepnow
+
+# toggle window float
+ctrl - u : yabai -m window --toggle float
+
+# toggle split direction
+ctrl - j : yabai -m window --toggle split
+
+# toggle yabai zoom-fullscreen
+ctrl - d : yabai -m window --toggle zoom-fullscreen
+
+# open Arc browser
+# ctrl - z : osascript -e 'if application "Arc" is running then' -e 'tell application "Arc" to make new window' -e 'tell application "Arc" to activate' -e 'else' -e 'tell application "Arc" to activate' -e 'end if'
+
+# open a new Finder window
+ctrl - n : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
+
+# open a new Terminal window
+ctrl - k : osascript -e 'if application "Terminal" is running then' -e 'tell application "Terminal" to do script ""' -e 'tell application "Terminal" to activate' -e 'else' -e 'tell application "Terminal" to activate' -e 'end if'
 
 # rotate windows clockwise
-ctrl + shift - r : sh /Users/pierclgr/cycle_windows.sh 
+ctrl + shift - r : sh ~/.yabai_scripts/cycle_windows.sh 
 
 # mirror space on y axis
 ctrl + shift - y : yabai -m space --mirror y-axis

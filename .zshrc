@@ -27,19 +27,9 @@ common_git_status() {
 }
 NEWLINE=$'\n'
 PROMPT='%F{red}[%D{%d-%m %H:%M}] %F{cyan}%n%F{red}@%F{yellow}%M %F{green}'$'\U2b95'' %~ $(common_git_status)%f%# '
-alias python='python3'
-alias pip='pip3'
-
-export PATH=/Applications/MiniZincIDE.app/Contents/Resources:$PATH
-export PATH=$PATH:/Users/pierclgr/.nexustools
 
 if [ -f $HOME/.zsh_aliases ]
 then
   . $HOME/.zsh_aliases
 fi
-
-export PATH="$PATH:/Users/pierclgr/flutter/bin"
-
-export MAVEN_HOME=/Library/apache-maven-3.6.3
-export PATH=$MAVEN_HOME/bin:$PATH
 
