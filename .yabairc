@@ -75,11 +75,11 @@ yabai -m rule --add title="^.*Widget.*$" manage=off
 
 # general space settings
 yabai -m config layout bsp
-# yabai -m config top_padding    30
-# yabai -m config bottom_padding 30
-# yabai -m config left_padding   30
-# yabai -m config right_padding  30
-# yabai -m config window_gap     35
+yabai -m config top_padding    30
+yabai -m config bottom_padding 30
+yabai -m config left_padding   30
+yabai -m config right_padding  30
+yabai -m config window_gap     30
 
 # set space 5 and 10 to float
 yabai -m config --space 5 layout float
@@ -139,20 +139,20 @@ yabai -m space 10 --label floating_2
 # yabai -m config --space 9 left_padding 20
 # yabai -m config --space 9 right_padding 20
 
-yabai -m signal --add event=window_created action="sh ~/.yabai_scripts/refresh.sh"
-yabai -m signal --add event=window_destroyed action="sh ~/.yabai_scripts/refresh.sh"
-yabai -m signal --add event=window_minimized action="sh ~/.yabai_scripts/refresh.sh"
-yabai -m signal --add event=window_deminimized action="sh ~/.yabai_scripts/refresh.sh"
-yabai -m signal --add event=space_changed action="sh ~/.yabai_scripts/refresh.sh"
-yabai -m signal --add event=application_terminated action="sh ~/.yabai_scripts/refresh.sh"
-yabai -m signal --add event=application_launched action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=window_created action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=window_destroyed action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=window_minimized action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=window_deminimized action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=space_changed action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=application_terminated action="sh ~/.yabai_scripts/refresh.sh"
+# yabai -m signal --add event=application_launched action="sh ~/.yabai_scripts/refresh.sh"
 # yabai -m signal --add event=application_activated action="~/.yabai_scripts/refresh.sh"
 # yabai -m signal --add event=application_deactivated action="~/.yabai_scripts/refresh.sh"
 
 # start JankyBorders for active window highlight
-borders active_color="gradient(top_left=0xffee8643,bottom_right=0xff804135)" inactive_color=0xff404040 width=12.0 style=round &
+# borders active_color="gradient(top_left=0xffee8643,bottom_right=0xff804135)" inactive_color=0xff404040 width=12.0 style=round &
 
-echo "yabai configuration loaded.."
+# echo "yabai configuration loaded.."
 
 # check at startup
-sh ~/.yabai_scripts/refresh.sh
+# sh ~/.yabai_scripts/refresh.sh
