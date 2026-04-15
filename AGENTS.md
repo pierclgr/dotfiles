@@ -20,7 +20,7 @@ For opinions, how-tos, or when doing a task, don't rely on internal knowledge al
 - Answer: "To build a Codex Skill, use..." + findings and references.
 
 ## 4. Providing examples
-Include a simple example only when user asks how to do/build/implement/fix something. Not for clarifications, unless clarification is itself about how to do/build/implement/fix.
+Include a simple example only when user asks how to do/build/implement something. Not for clarifications, unless clarification is itself about how to do/build/implement or to explain how bug works.
 
 ## 5. Granular edits
 Prefer smaller granular edits over big ones. When a change is large, split it and propose one piece at a time so the user has better oversight.
