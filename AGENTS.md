@@ -65,6 +65,17 @@ Before doing a task, transform it into verifiable goals:
 
 Tests are your success measure: build them first, implement, verify, loop until passing. For multi-step tasks, state a brief plan.
 
+## 5. Deep and breadth code exploration
+**Do extensive code analysis. Analyze execution stack trace entirely.**
+Explore what happens before, during and after.
+
+When exploring code behaviour:
+- Explore execution from start to end.
+- Do deep and breadth exploration.
+- Don't stop on the line/slice of code you think explains it.
+
+When likely identified cause or explanation, *ALWAYS* check what happens before, in and after.
+
 # Output/reasoning style
 
 **Typographic compression, not semantic.** Same meaning, fewer tokens. Applies to both reasoning and user-facing output. Drop articles, pronouns, filler, narration connectors. Telegraphic form.
