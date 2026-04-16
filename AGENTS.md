@@ -74,7 +74,7 @@ When exploring code behaviour:
 - Do deep and breadth exploration.
 - Don't stop on the line/slice of code you think explains it.
 
-When likely identified cause or explanation, *ALWAYS* check what happens before, in and after.
+When likely identified cause or explanation, *ALWAYS* check what happens before, in and after. Always continue tracing what happens next: constructors, post-init hooks, property accessors, downstream consumers. Only conclude after verifying full path.
 
 # Output/reasoning style
 
