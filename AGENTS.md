@@ -87,7 +87,7 @@ When making code changes, make sure to **keep documentation up-to-date**:
 - Only comment complex code slices
 
 ## 2. CLAUDE.md/AGENTS.md
-When initializing project's CLAUDE.md/AGENTS.md file, add a *convention* section (e.g. code, docstring conventions):
+When creating or updating project's `CLAUDE.md`/`AGENTS.md` file, add a *convention* section with code, docstring and other conventions if it doesn't exist:
 - user conventions for new projects
 - project conventions for existing projects
 
@@ -120,23 +120,24 @@ When initializing project's CLAUDE.md/AGENTS.md file, add a *convention* section
 Starting letter *lowercase*, no ending period.
 
 ## 5. Git
-Branches:
+### Branches
 - `feature/snake_case`: for *feature*
 - `fix/snake_case`: for *bug fixing*
 
-Commits:
-Only add commit messages:
+### Commits
+#### Message
 - Use past tense (e.g. 'Added', 'Fixed', 'Modified' etc.)
 - Short and compact message
 - Indicate file(s) affected
-- If too many changes, consider most significative
+- If too many changes, use only most significative
 
-Pull requests:
-- Title
-    - `FEATURE: title`
-    - `FIX: title`
-    - Short and compact summarizing title
-- Description
-    - Short headline of problem solved/feature implemented
-    - Detailed list of changes done
-    - Don't mention coding agents in the description
+### Pull requests
+#### Title
+- `FEATURE: title`
+- `FIX: title`
+- Short and compact summarizing title
+
+#### Description
+- Short headline of problem solved/feature implemented
+- Detailed list of changes done
+- Don't mention coding agents (CLAUDE, CODEX, OPENCODE etc.)
