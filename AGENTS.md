@@ -95,7 +95,7 @@ When making code changes, make sure to **keep documentation up-to-date**:
 
 # Code, naming and documentation conventions
 
-**User preferences.**: these are user preferences, to use when no other preference is already in use. Prefer project's `CLAUDE.md`, `AGENTS.md` and code conventions if present.
+**PREMISE**: these are **user preferences**, to use when no other standard is already in use. **Always** use project's `CLAUDE.md`, `AGENTS.md` and project conventions if present. Use user preferences otherwise. Also use user preferences for new projects.
 
 ## 1. Python preferences
 - Docstring style: Google
@@ -113,3 +113,25 @@ When making code changes, make sure to **keep documentation up-to-date**:
 ## 4. Code comments
 - Comment only complex code slices
 - Starting letter *lowercase*, no ending period
+
+## 5. Git
+Branches:
+- `feature/snake_case`: for *feature*
+- `fix/snake_case`: for *bug fixing*
+
+Commits:
+Only add commit messages:
+- Use past tense (e.g. 'Added', 'Fixed', 'Modified' etc.)
+- Short and compact message
+- Indicate file(s) affected
+- If too many changes, consider most significative
+
+Pull requests:
+- Title
+    - `FEATURE: title`
+    - `FIX: title`
+    - Short and compact summarizing title
+- Description
+    - Short headline of problem solved/feature implemented
+    - Detailed list of changes done
+    - Don't mention coding agents in the description
