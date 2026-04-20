@@ -84,6 +84,12 @@ When making code changes, make sure to **keep documentation up-to-date**:
 - Update existing comments, if any
 - Update repo's documentation files, if any
 - Update repo's `CLAUDE.md` and `AGENTS.md` files
+- Only comment complex code slices
+
+## 2. CLAUDE.md/AGENTS.md
+When initializing project's CLAUDE.md/AGENTS.md file, add a *convention* section (e.g. code, docstring conventions):
+- user conventions for new projects
+- project conventions for existing projects
 
 # Output/reasoning style
 
@@ -95,7 +101,7 @@ When making code changes, make sure to **keep documentation up-to-date**:
 
 # Code, naming and documentation conventions
 
-**PREMISE**: these are **user preferences**, to use when no other standard is already in use. **Always** use project's `CLAUDE.md`, `AGENTS.md` and project conventions if present. Use user preferences otherwise. Also use user preferences for new projects.
+**PREMISE**: the following are **user preferences**, to use when no other standard is already in use and with new projects. **Always** use project's `CLAUDE.md`, `AGENTS.md` and project conventions if present.
 
 ## 1. Python preferences
 - Docstring style: Google
@@ -111,8 +117,7 @@ When making code changes, make sure to **keep documentation up-to-date**:
 - `tests/`: all test files
 
 ## 4. Code comments
-- Comment only complex code slices
-- Starting letter *lowercase*, no ending period
+Starting letter *lowercase*, no ending period.
 
 ## 5. Git
 Branches:
