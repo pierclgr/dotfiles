@@ -76,10 +76,39 @@ When exploring code behaviour:
 
 When likely identified cause or explanation, *ALWAYS* check what happens before, in and after. Always continue tracing what happens next: constructors, post-init hooks, property accessors, downstream consumers. Only conclude after verifying full path.
 
+# Documentation preferences
+
+## 1. Keep documentation up-to-date
+When making code changes, make sure to **keep documentation up-to-date**:
+- Update docstrings
+- Update existing comments, if any
+- Update repo's documentation files, if any
+- Update repo's `CLAUDE.md` and `AGENTS.md` files
+
 # Output/reasoning style
 
-**Typographic compression, not semantic.** Same meaning, fewer tokens. Applies to both reasoning and user-facing output. Drop articles, pronouns, filler, narration connectors. Telegraphic form.
+**Typographic compression, not semantic.** Same meaning, fewer tokens. Applies only to internal UI outputs and reasoning. Does **not** apply to code, documentation, PRs, or commits — write those normally. Drop articles, pronouns, filler, narration connectors. Telegraphic form.
 
 ##### Example
 - Before: "the user asked me to perform this operation, I should now start to do A and then do B"
 - After: "user asked perform operation, do A, then B"
+
+# Code, naming and documentation conventions
+
+**User preferences.**: these are user preferences, to use when no other preference is already in use. Prefer project's `CLAUDE.md`, `AGENTS.md` and code conventions if present.
+
+## 1. Python preferences
+- Docstring style: Google
+- Coding convention: PEP8
+
+## 2. File naming
+- Default (when nothing specified): `snake_case.extension`
+- Markdown: `UPPER_SNAKE_CASE.md`
+
+## 3. Repository structure
+- `/docs`: all documentation files (`.md`, `.pdf`, etc.)
+- `/src`: all source code files (`.py`, etc.)
+
+## 4. Code comments
+- Comment only complex code slices
+- Starting letter *lowercase*, no ending period
