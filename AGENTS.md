@@ -106,8 +106,9 @@ When making code changes, make sure to **keep documentation up-to-date**:
 - Markdown: `UPPER_SNAKE_CASE.md`
 
 ## 3. Repository structure
-- `/docs`: all documentation files (`.md`, `.pdf`, etc.)
-- `/src`: all source code files (`.py`, etc.)
+- `docs/`: all documentation files (`.md`, `.pdf`, etc.)
+- `src/`: all source code files (`.py`, etc.)
+- `tests/`: all test files
 
 ## 4. Code comments
 - Comment only complex code slices
