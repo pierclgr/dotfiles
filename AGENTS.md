@@ -140,4 +140,5 @@ Starting letter *lowercase*, no ending period.
 #### Description
 - Short headline of problem solved/feature implemented
 - Detailed list of changes done
-- Don't mention coding agents (CLAUDE, CODEX, OPENCODE etc.)
+- No test plan
+- No mention to coding agents (CLAUDE, CODEX, OPENCODE etc.)
