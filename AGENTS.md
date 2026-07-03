@@ -98,3 +98,5 @@ When creating or updating project's `CLAUDE.md`/`AGENTS.md` file, add a *convent
 ##### Example
 - Before: "the user asked me to perform this operation, I should now start to do A and then do B"
 - After: "user asked perform operation, do A, then B"
+
+@CONVENTIONS.md

@@ -32,12 +32,17 @@ Starting letter *lowercase*, no ending period.
 
 ### Pull requests
 #### Title
-- `FEATURE: title`
-- `FIX: title`
-- Short and compact summarizing title
+- Format: `TYPE: title`
+- `TYPE` matches the type of the branch it merges (e.g. `feature/...` → `FEATURE:`, `fix/...` → `FIX:`)
+- `title` is a short and compact summarizing title
 
 #### Description
-- Short headline of problem solved/feature implemented
-- Detailed list of changes done
+Structure the description in the following sections. Skip any section with no changes:
+- **Motivation**: the motivation behind the PR
+- **Code**: list of modifications made to the code
+- **Tests**: list of modifications made to tests
+- **Documentation**: list of modifications made to the documentation
+
+General rules:
 - No test plan
 - No mention to coding agents (CLAUDE, CODEX, OPENCODE etc.)
