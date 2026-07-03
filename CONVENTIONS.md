@@ -37,7 +37,7 @@ Starting letter *lowercase*, no ending period.
 - `title` is a short and compact summarizing title
 
 #### Description
-Structure the description in the following sections. Skip any section with no changes:
+Structure the description in the following sections, each titled with a proper markdown header (e.g. `## Motivation`). Skip any section with no changes:
 - **Motivation**: the motivation behind the PR
 - **Code**: list of modifications made to the code
 - **Tests**: list of modifications made to tests
