@@ -4,8 +4,9 @@ description: >-
   Open a GitHub pull request from the current branch to a target branch, with a
   title and body that follow the user's conventions. Use this whenever the user
   wants to open, create, raise, or submit a PR / pull request / MR from their
-  branch — e.g. "open a PR", "create a pull request", "PR this to develop",
-  "raise a PR against main", "submit this branch for review". If the user names
+  branch — e.g. "open a PR", "open PR", "PR this", "PR this to develop",
+  "create a pull request", "raise a PR against main", "submit this branch for
+  review". If the user names
   a target branch, use it; if not, auto-detect the parent branch the current one
   was created from. Trigger even when the user doesn't say the word "skill".
 compatibility: Requires `git` and the GitHub CLI (`gh`), authenticated (`gh auth status`).
