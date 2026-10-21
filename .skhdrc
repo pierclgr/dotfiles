@@ -75,7 +75,7 @@ ctrl + alt - tab : yabai -m window --focus "$(yabai -m query --windows --space |
 ctrl + alt - return : skhd -k "fn + ctrl - f"
 
 # toggle native fullscreen
-ctrl - f : yabai -m window --toggle native-fullscreen
+ctrl - s : yabai -m window --toggle native-fullscreen
 
 # spotlight search
 ctrl - space : skhd -k "cmd - space"
