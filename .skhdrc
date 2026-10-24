@@ -107,8 +107,8 @@ ctrl - d : yabai -m window --toggle zoom-fullscreen
 # open a new Finder window
 ctrl - n : osascript -e 'tell application "Finder" to make new Finder window' -e 'tell application "Finder" to activate'
 
-# open a new Terminal window
-ctrl - k : osascript -e 'if application "Terminal" is running then' -e 'tell application "Terminal" to do script ""' -e 'tell application "Terminal" to activate' -e 'else' -e 'tell application "Terminal" to activate' -e 'end if'
+# open Warp
+ctrl - k : open -a Warp
 
 # rotate windows clockwise
 ctrl + shift - r : sh ~/.yabai_scripts/cycle_windows.sh 
