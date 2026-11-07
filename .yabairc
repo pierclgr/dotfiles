@@ -58,11 +58,12 @@ yabai -m rule --add app="^CleanShot X$" manage=off
 yabai -m rule --add app="^Sleeve$" manage=off
 yabai -m rule --add app="^Forehead$" manage=off
 yabai -m rule --add app="^Music$" manage=off
-yabai -m rule --add app="^Arc$" subrole="^AXSystemDialog$" manage=off sticky=on layer=above
+yabai -m rule --add app="^Dia$" subrole="^AXSystemDialog$" manage=off sticky=on sub-layer=above
 
-# Disable mouse_follows_focus and focus_follows_mouse when Arc PIP is focused, re-enable otherwise
-yabai -m signal --add event=window_focused app="^Arc$" title="^$" action="yabai -m config mouse_follows_focus off; yabai -m config focus_follows_mouse off"
-yabai -m signal --add event=window_focused app!="^Arc$" action="yabai -m config mouse_follows_focus on; yabai -m config focus_follows_mouse autoraise"
+# Disable mouse_follows_focus and focus_follows_mouse when Dia PIP is focused, re-enable otherwise
+yabai -m signal --add event=window_focused app="^Dia$" title="^$" action="yabai -m config mouse_follows_focus off; yabai -m config focus_follows_mouse off"
+yabai -m signal --add event=window_focused app="^Dia$" title!="^$" action="yabai -m config mouse_follows_focus on; yabai -m config focus_follows_mouse autoraise"
+yabai -m signal --add event=window_focused app!="^Dia$" action="yabai -m config mouse_follows_focus on; yabai -m config focus_follows_mouse autoraise"
 # yabai -m rule --add app="^Microsoft Teams classic$" manage=off
 # yabai -m rule --add app="^Microsoft Teams$" manage=off
 yabai -m rule --add title="^.*Preferences.*$" manage=off
