@@ -80,6 +80,9 @@ ctrl - s : yabai -m window --toggle native-fullscreen
 # spotlight search
 ctrl - space : skhd -k "cmd - space"
 
+# open NotchNook clipboard
+cmd + shift - v : skhd -k "cmd + shift - p"
+
 # close window
 ctrl - w : skhd -k "cmd - w"
 
